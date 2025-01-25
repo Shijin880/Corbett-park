@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corbett National Park Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .features {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Corbett National Park Features</h1>
+    <button onclick="showFeatures()">Show Features</button>
+    <div class="features" id="features"></div>
+
+    <script>
+        const featuresData = {
+            "features": [
+                {
+                    "name": "Biodiversity Hotspot",
+                    "description": "Corbett National Park is home to a wide variety of flora and fauna, including over 600 species of birds, 50 species of mammals, and 25 species of reptiles."
+                },
+                {
+                    "name": "Bengal Tigers",
+                    "description": "The park is renowned for its population of Bengal tigers, making it a popular destination for wildlife enthusiasts and photographers."
+                },
+                {
+                    "name": "Elephant Safaris",
+                    "description": "Visitors can enjoy elephant safaris, which offer a unique way to explore the park's dense forests and grasslands."
+                },
+                {
+                    "name": "Rivers and Water Bodies",
+                    "description": "The park is crisscrossed by several rivers, including the Ramganga River, which provides a vital water source for the park's wildlife."
+                },
+                {
+                    "name": "Diverse Landscapes",
+                    "description": "The park features a mix of hills, riverine belts, marshy depressions, grasslands, and large lakes, offering diverse habitats for wildlife."
+                },
+                {
+                    "name": "Jim Corbett Museum",
+                    "description": "Located near the park, the museum is dedicated to the life and work of Jim Corbett, the legendary hunter-turned-conservationist after whom the park is named."
+                },
+                {
+                    "name": "Jungle Safaris",
+                    "description": "The park offers jeep safaris that allow visitors to explore different zones and observe wildlife in their natural habitat."
+                },
+                {
+                    "name": "Bird Watching",
+                    "description": "With a rich avian population, the park is a paradise for bird watchers, especially during the winter months when migratory birds visit."
+                },
+                {
+                    "name": "Oldest National Park",
+                    "description": "Established in 1936 as Hailey National Park, it is the oldest national park in India and was later renamed in honor of Jim Corbett."
+                },
+                {
+                    "name": "Conservation Efforts",
+                    "description": "The park plays a crucial role in the conservation of endangered species and is part of the larger Corbett Tiger Reserve."
+                }
+            ]
+        };
+
+        function showFeatures() {
+            const featuresDiv = document.getElementById('features');
+            if (featuresDiv.style.display === 'none' || featuresDiv.style.display === '') {
+                featuresDiv.style.display = 'block';
+                featuresDiv.innerHTML = '<ul>' + featuresData.features.map(feature => 
+                    `<li><strong>${feature.name}:</strong> ${feature.description}</li>`
+                ).join('') + '</ul>';
+            } else {
+                featuresDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
